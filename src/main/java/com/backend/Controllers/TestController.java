@@ -41,11 +41,12 @@ public class TestController {
 
     @GetMapping(value = {"", "/"})
     @Transactional
-    public ResponseEntity<List<TestProjects>> getAll() {throw new Exception();
+    public ResponseEntity<List<TestProjects>> getAll() {
         try {
             // Set search_path to public schema (required because isolated role has restricted search_path)
             setSearchPath();
-            
+            int i = 0;
+            int j=9/i;
             Query query = entityManager.createNativeQuery("SELECT \"Id\", \"Name\" FROM \"TestProjects\" ORDER BY \"Id\"", TestProjects.class);
             @SuppressWarnings("unchecked")
             List<TestProjects> projects = query.getResultList();
