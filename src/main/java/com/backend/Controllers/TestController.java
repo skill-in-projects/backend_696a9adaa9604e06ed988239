@@ -53,6 +53,7 @@ public class TestController {
             return ResponseEntity.ok(projects);
         } catch (Exception e) {
             e.printStackTrace();
+            throw;
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
