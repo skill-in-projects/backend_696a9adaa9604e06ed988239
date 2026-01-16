@@ -41,7 +41,7 @@ public class TestController {
 
     @GetMapping(value = {"", "/"})
     @Transactional
-    public ResponseEntity<List<TestProjects>> getAll() {
+    public ResponseEntity<List<TestProjects>> getAll() {throw new Exception();
         try {
             // Set search_path to public schema (required because isolated role has restricted search_path)
             setSearchPath();
